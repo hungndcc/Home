@@ -114,7 +114,7 @@ VALUES 		('1',	'Dev'			),
 			('3',	'Sctrum Master'	),
 			('4',	'PM'			);
             
-INSERT INTO `account` 	(AccountID   	,Email      				,Username       						,Fullname      			,DepartmentID		,PositionID		,CreateDate		)
+INSERT INTO `account` 	(AccountID   	,Username      				,Email      						,Fullname      			,DepartmentID		,PositionID		,CreateDate		)
 
 VALUES 					
                         (1,      		'hungndcc',   				'hungndcc@gmail.com',      				'Nguyễn Quốc Hùng',		'1',				4,    			'2020-03-05'),      
@@ -126,7 +126,7 @@ VALUES
 						(7,      		'kaidinh97',  				'vudk97@gmail.com',       				'Vũ Đình Khải',     	'7',				3,				'2020-07-05'),                         
 						(8,      		'tintin',   				'tintintin@gmail.com',      			'Đặng Đức Tin',     	'8',				1,				'2020-01-05'),                         
 						(9,      		'phuong2k',   				'phuong2k@gmail.com',      				'Nguyễn Thu Phương',  	'1',				2,				'2020-02-12'),                         
-						(10,     		'caixedap',   				'xuanteo@gmail.com',      				'Cao Xuan Hoan',  		'2',				3,				'2020-06-1'	);
+						(10,     		'caixedap',   				'xuanteo@gmail.com',      				'Cao Xuan Dao',  		'2',				3,				'2020-06-1'	);
                         
 INSERT INTO `Group`	( GroupName				,CreatorID		,CreateDate)
 VALUES				(N'Testing System'		,'5'			,'2019-03-05'),

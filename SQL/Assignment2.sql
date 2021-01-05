@@ -61,12 +61,64 @@ FROM	department  d
 INNER JOIN `Account` a
 ON d.DepartmentID = a.DepartmentID
 GROUP BY 	A.DepartmentID
-HAVING	count(AccountID) > 1;
+HAVING	count(AccountID) > 3;
 
 -- 13. Viết lệnh để lấy ra danh sách câu hỏi được sử dụng trong đề thi nhiều nhất
-SELECT q.QuestionID, q.Content
-FROM 	question q
-JOIN	examquestion eq
-ON		q.QuestionID = eq.QuestionID
-GROUP BY eq.QuestionID
-HAVING	count(QuestionID) > 0
+
+SELECT 		q.*,count(eq.QuestionID)
+FROM		Question q
+INNER JOIN 	ExamQuestion eq 
+ON			q.QuestionID = eq.QuestionID
+GROUP BY	eq.QuestionID
+ORDER BY	count(eq.QuestionID) DESC
+LIMIT 1;
+
+-- 14. Thông kê mỗi category Question được sử dụng trong bao nhiêu Question
+
+SELECT		cq.*, count(q.CategoryID) as so_Question_duoc_su_dung
+FROM		CategoryQuestion cq
+INNER JOIN	Question q
+ON			cq.CategoryID = q.CategoryID
+GROUP BY 	q.CategoryID;
+
+-- 15. Lấy ra Question có nhiều câu trả lời nhất
+
+SELECT		q.*,count(a.QuestionID) as so_cau_tra_loi
+FROM		Answer a
+INNER JOIN	Question q
+ON			a.QuestionID = q.QuestionID
+GROUP BY	a.QuestionID
+LIMIT 1;
+
+-- 16. Tìm chức vụ có ít người nhất
+
+SELECT		p.*,count(a.PositionID) as so_nguoi
+FROM		`Account` a
+INNER JOIN	Position p
+ON			a.PositionID = p.PositionID
+GROUP BY	a.PositionID 
+ORDER BY so_nguoi ASC
+LIMIT 1;
+
+-- 17. Thống kê mỗi phòng ban có bao nhiêu dev, test, scrum master, PM 
+
+-- 18. Lấy thông tin chi tiết của câu hỏi bao gồm: thông tin cơ bản của question, loại câu hỏi, ai là người tạo ra câu hỏi, câu trả lời là gì, …
+
+SELECT		q.QuestionID, tq.TypeName,q.Content, an.Content, an.Iscorrect, FullName
+
+FROM		Question q
+INNER JOIN	TypeQuestion tq ON tq.TypeID = q.TypeID
+INNER JOIN	Answer	an 		ON q.QuestionID = an.QuestionID
+INNER JOIN 	`Account` ac	ON q.CreatorID = ac.AccountID;
+
+-- 19.  Lấy ra số lượng câu hỏi của mỗi loại tự luận hay trắc nghiệm
+
+SELECT		tq.*, count(q.TypeID) as so_cau_hoi
+FROM 		TypeQuestion tq
+INNER JOIN	Question q 
+ON			tq.TypeID = q.TypeID
+GROUP BY	tq.TypeID
+
+
+
+

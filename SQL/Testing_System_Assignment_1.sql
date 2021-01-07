@@ -202,15 +202,15 @@ VALUES 								('Java'			),
 													
 -- Add data Question
 INSERT INTO Question	(Content			, CategoryID, TypeID		, CreatorID	, CreateDate )
-VALUES 					(N'Câu hỏi về Java',	1		,   '1'			,   '2'		,'2020-04-05'),
+VALUES 					(N'Câu hỏi về Java',	1		,   '1'			,   '2'		,'2020-03-05'),
 						(N'Câu Hỏi về PHP'	,	10		,   '2'			,   '2'		,'2020-04-05'),
-						(N'Hỏi về C#'		,	9		,   '2'			,   '3'		,'2020-04-06'),
-						(N'Hỏi về Ruby'		,	6		,   '1'			,   '4'		,'2020-04-06'),
-						(N'Hỏi về Postman'	,	5		,   '1'			,   '5'		,'2020-04-06'),
-						(N'Hỏi về ADO.NET'	,	2		,   '2'			,   '6'		,'2020-04-06'),
-						(N'Hỏi về ASP.NET'	,	1		,   '1'			,   '7'		,'2020-04-06'),
-						(N'Hỏi về C++'		,	8		,   '1'			,   '8'		,'2020-04-07'),
-						(N'Hỏi về SQL'		,	4		,   '2'			,   '9'		,'2020-04-07'),
+						(N'Hỏi về C#'		,	9		,   '2'			,   '3'		,'2020-05-06'),
+						(N'Hỏi về Ruby'		,	6		,   '1'			,   '4'		,'2020-01-06'),
+						(N'Hỏi về Postman'	,	5		,   '1'			,   '5'		,'2020-01-06'),
+						(N'Hỏi về ADO.NET'	,	2		,   '2'			,   '6'		,'2020-02-06'),
+						(N'Hỏi về ASP.NET'	,	1		,   '1'			,   '7'		,'2020-03-06'),
+						(N'Hỏi về C++'		,	8		,   '1'			,   '8'		,'2020-03-07'),
+						(N'Hỏi về SQL'		,	4		,   '2'			,   '9'		,'2020-01-07'),
 						(N'Hỏi về Python'	,	2		,   '1'			,   '10'	,'2020-04-07');
 
 -- Add data Answers
